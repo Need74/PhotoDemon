@@ -6,7 +6,7 @@
 
 <langid>lv-LV</langid>
 <langname>Latvian (latviešu)</langname>
-<langversion>2028.8 Alfa (Build 25).50</langversion>
+<langversion>2028.8 Alfa (Build 25).60</langversion>
 <langstatus>Up-to-date</langstatus>
 
 <author>Maris Ozolins (aka Mariozo)</author>
@@ -629,6 +629,11 @@
 </phrase>
 
 <phrase>
+<original>Remove holes from selection</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>Erase selected area</original>
 <translation>Izdzēst atlasīto apgabalu</translation>
 </phrase>
@@ -654,18 +659,28 @@
 </phrase>
 
 <phrase>
+<original>Selection mask from active layer</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>Save selection</original>
 <translation>Saglabāt atlasi</translation>
 </phrase>
 
 <phrase>
-<original>Export selected area as image</original>
-<translation>Eksportēt atlasīto apgabalu kā attēlu</translation>
+<original>Selected pixels to file</original>
+<translation>Izvēlētais apgabals kā attēls</translation>
 </phrase>
 
 <phrase>
-<original>Export selection mask as image</original>
-<translation>Eksportēt atlases masku kā attēlu</translation>
+<original>Selection mask to file</original>
+<translation>Atlases maska kā attēls</translation>
+</phrase>
+
+<phrase>
+<original>Selection mask to layer</original>
+<translation></translation>
 </phrase>
 
 <phrase>
@@ -1333,7 +1348,7 @@
 <translation>Izdzēst neseno attēlu sarakstu</translation>
 </phrase>
 
-<!-- Actions.bas contains 271 phrases. 7 were duplicates of existing phrases, so only 264 new phrases were written to file. -->
+<!-- Actions.bas contains 274 phrases. 7 were duplicates of existing phrases, so only 267 new phrases were written to file. -->
 
 <phrase>
 <original>[untitled image]</original>
@@ -1387,6 +1402,168 @@
 </phrase>
 
 <!-- ColorManagement_ICM.bas contains 7 phrases. 4 were duplicates of existing phrases, so only 3 new phrases were written to file. -->
+
+<phrase>
+<original>Normal</original>
+<translation>Parasts</translation>
+</phrase>
+
+<phrase>
+<original>Darken</original>
+<translation>Aptumšot</translation>
+</phrase>
+
+<phrase>
+<original>Multiply</original>
+<translation>Pavairot</translation>
+</phrase>
+
+<phrase>
+<original>Color burn</original>
+<translation>Krāsu iedegums</translation>
+</phrase>
+
+<phrase>
+<original>Linear burn</original>
+<translation>Lineārs iedegums</translation>
+</phrase>
+
+<phrase>
+<original>Lighten</original>
+<translation>Izgaismot</translation>
+</phrase>
+
+<phrase>
+<original>Screen</original>
+<translation>Ekrāns</translation>
+</phrase>
+
+<phrase>
+<original>Color dodge</original>
+<translation>Krāsu dodge</translation>
+</phrase>
+
+<phrase>
+<original>Linear dodge</original>
+<translation>Linear dodge</translation>
+</phrase>
+
+<phrase>
+<original>Overlay</original>
+<translation>Pārklāt</translation>
+</phrase>
+
+<phrase>
+<original>Soft light</original>
+<translation>Maigā gaisma</translation>
+</phrase>
+
+<phrase>
+<original>Hard light</original>
+<translation>Cieta gaisma</translation>
+</phrase>
+
+<phrase>
+<original>Vivid light</original>
+<translation>Spilgta gaisma</translation>
+</phrase>
+
+<phrase>
+<original>Linear light</original>
+<translation>Lineāra gaisma</translation>
+</phrase>
+
+<phrase>
+<original>Pin light</original>
+<translation>Pin gaisma</translation>
+</phrase>
+
+<phrase>
+<original>Hard mix</original>
+<translation>Ciets maisījums</translation>
+</phrase>
+
+<phrase>
+<original>Difference</original>
+<translation>Atšķirība</translation>
+</phrase>
+
+<phrase>
+<original>Exclusion</original>
+<translation>Izslēgt</translation>
+</phrase>
+
+<phrase>
+<original>Subtract</original>
+<translation>Atņemt</translation>
+</phrase>
+
+<phrase>
+<original>Divide</original>
+<translation>Dalīt</translation>
+</phrase>
+
+<phrase>
+<original>Hue</original>
+<translation>Nokrāsa</translation>
+</phrase>
+
+<phrase>
+<original>Saturation</original>
+<translation>Piesātinājums</translation>
+</phrase>
+
+<phrase>
+<original>Color</original>
+<translation>Krāsa</translation>
+</phrase>
+
+<phrase>
+<original>Luminosity</original>
+<translation>Spilgtums</translation>
+</phrase>
+
+<phrase>
+<original>Grain extract</original>
+<translation>Graudainuma noņemšana</translation>
+</phrase>
+
+<phrase>
+<original>Grain merge</original>
+<translation>Graudainuma apvienošana</translation>
+</phrase>
+
+<phrase>
+<original>Erase</original>
+<translation>Izdzēst</translation>
+</phrase>
+
+<phrase>
+<original>Behind</original>
+<translation>Aiz</translation>
+</phrase>
+
+<phrase>
+<original>Replace</original>
+<translation>Aizstāt</translation>
+</phrase>
+
+<phrase>
+<original>Next blend mode</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Previous blend mode</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Blend mode: %1</original>
+<translation></translation>
+</phrase>
+
+<!-- Colors.bas contains 118 phrases. 86 were duplicates of existing phrases, so only 32 new phrases were written to file. -->
 
 <phrase>
 <original>How would you like to load this image?</original>
@@ -1930,151 +2107,6 @@ This image contains %2 unique color + opacity values (RGBA).</original>
 </phrase>
 
 <phrase>
-<original>Normal</original>
-<translation>Parasts</translation>
-</phrase>
-
-<phrase>
-<original>Darken</original>
-<translation>Aptumšot</translation>
-</phrase>
-
-<phrase>
-<original>Multiply</original>
-<translation>Pavairot</translation>
-</phrase>
-
-<phrase>
-<original>Color burn</original>
-<translation>Krāsu iedegums</translation>
-</phrase>
-
-<phrase>
-<original>Linear burn</original>
-<translation>Lineārs iedegums</translation>
-</phrase>
-
-<phrase>
-<original>Lighten</original>
-<translation>Izgaismot</translation>
-</phrase>
-
-<phrase>
-<original>Screen</original>
-<translation>Ekrāns</translation>
-</phrase>
-
-<phrase>
-<original>Color dodge</original>
-<translation>Krāsu dodge</translation>
-</phrase>
-
-<phrase>
-<original>Linear dodge</original>
-<translation>Linear dodge</translation>
-</phrase>
-
-<phrase>
-<original>Overlay</original>
-<translation>Pārklāt</translation>
-</phrase>
-
-<phrase>
-<original>Soft light</original>
-<translation>Maigā gaisma</translation>
-</phrase>
-
-<phrase>
-<original>Hard light</original>
-<translation>Cieta gaisma</translation>
-</phrase>
-
-<phrase>
-<original>Vivid light</original>
-<translation>Spilgta gaisma</translation>
-</phrase>
-
-<phrase>
-<original>Linear light</original>
-<translation>Lineāra gaisma</translation>
-</phrase>
-
-<phrase>
-<original>Pin light</original>
-<translation>Pin gaisma</translation>
-</phrase>
-
-<phrase>
-<original>Hard mix</original>
-<translation>Ciets maisījums</translation>
-</phrase>
-
-<phrase>
-<original>Difference</original>
-<translation>Atšķirība</translation>
-</phrase>
-
-<phrase>
-<original>Exclusion</original>
-<translation>Izslēgt</translation>
-</phrase>
-
-<phrase>
-<original>Subtract</original>
-<translation>Atņemt</translation>
-</phrase>
-
-<phrase>
-<original>Divide</original>
-<translation>Dalīt</translation>
-</phrase>
-
-<phrase>
-<original>Hue</original>
-<translation>Nokrāsa</translation>
-</phrase>
-
-<phrase>
-<original>Saturation</original>
-<translation>Piesātinājums</translation>
-</phrase>
-
-<phrase>
-<original>Color</original>
-<translation>Krāsa</translation>
-</phrase>
-
-<phrase>
-<original>Luminosity</original>
-<translation>Spilgtums</translation>
-</phrase>
-
-<phrase>
-<original>Grain extract</original>
-<translation>Graudainuma noņemšana</translation>
-</phrase>
-
-<phrase>
-<original>Grain merge</original>
-<translation>Graudainuma apvienošana</translation>
-</phrase>
-
-<phrase>
-<original>Erase</original>
-<translation>Izdzēst</translation>
-</phrase>
-
-<phrase>
-<original>Behind</original>
-<translation>Aiz</translation>
-</phrase>
-
-<phrase>
-<original>Replace</original>
-<translation>Aizstāt</translation>
-</phrase>
-
-<phrase>
 <original>Inherit</original>
 <translation>Pārmantots</translation>
 </phrase>
@@ -2149,7 +2181,7 @@ This image contains %2 unique color + opacity values (RGBA).</original>
 <translation>priekšskatījums nav pieejams</translation>
 </phrase>
 
-<!-- Interface.bas contains 101 phrases. 41 were duplicates of existing phrases, so only 60 new phrases were written to file. -->
+<!-- Interface.bas contains 101 phrases. 70 were duplicates of existing phrases, so only 31 new phrases were written to file. -->
 
 <phrase>
 <original>Blank layer</original>
@@ -2405,7 +2437,7 @@ Lūdzu, pārbaudiet, vai šis(-ie) attēls(-i) eksistē un vai tas(-i) izmanto a
 <translation>Attēlu dublēšana pabeigta.</translation>
 </phrase>
 
-<!-- Loading.bas contains 40 phrases. 16 were duplicates of existing phrases, so only 24 new phrases were written to file. -->
+<!-- Loading.bas contains 38 phrases. 14 were duplicates of existing phrases, so only 24 new phrases were written to file. -->
 
 <phrase>
 <original>This macro does not contain any recordable actions.  Are you sure you want to stop recording?
@@ -2502,7 +2534,7 @@ Lūdzu, pārbaudiet, vai šis(-ie) attēls(-i) eksistē un vai tas(-i) izmanto a
 <translation>Notīrīt neseno makro sarakstu</translation>
 </phrase>
 
-<!-- Menus.bas contains 14 phrases. 12 were duplicates of existing phrases, so only 2 new phrases were written to file. -->
+<!-- Menus.bas contains 12 phrases. 10 were duplicates of existing phrases, so only 2 new phrases were written to file. -->
 
 <phrase>
 <original>All supported palettes</original>
@@ -3133,6 +3165,11 @@ Apraksts: %2
 </phrase>
 
 <phrase>
+<original>text style preset</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>Modify selection</original>
 <translation>Mainīt atlasi</translation>
 </phrase>
@@ -3151,7 +3188,7 @@ Kad esat pabeidzis, noklikšķiniet uz pogas Iesniegt jaunu problēmu.  Paldies!
 <translation>Kļūdu ziņojuma instrukcijas</translation>
 </phrase>
 
-<!-- Processor.bas contains 133 phrases. 71 were duplicates of existing phrases, so only 62 new phrases were written to file. -->
+<!-- Processor.bas contains 135 phrases. 72 were duplicates of existing phrases, so only 63 new phrases were written to file. -->
 
 <phrase>
 <original>automatic</original>
@@ -3263,16 +3300,6 @@ Pagaidām, lūdzu, mēģiniet saglabāt attēlu citā formātā.  Par to varat a
 <!-- ScreenCapture.bas contains 7 phrases. 3 were duplicates of existing phrases, so only 4 new phrases were written to file. -->
 
 <phrase>
-<original>This action requires an active selection.  Please create a selection before continuing.</original>
-<translation>Šai darbībai ir nepieciešama aktīva atlase.  Pirms turpināšanas izveidojiet atlasi.</translation>
-</phrase>
-
-<phrase>
-<original>Export selection as image</original>
-<translation>Eksportēt atlasi kā attēlu</translation>
-</phrase>
-
-<phrase>
 <original>PhotoDemon selection</original>
 <translation>PhotoDemon izvēle</translation>
 </phrase>
@@ -3312,21 +3339,11 @@ Pagaidām, lūdzu, mēģiniet saglabāt attēlu citā formātā.  Par to varat a
 <translation>Notika nezināma kļūda.  Izvēle netika saglabāta.  Lūdzu, mēģiniet vēlreiz.</translation>
 </phrase>
 
-<!-- SelectionFiles.bas contains 25 phrases. 15 were duplicates of existing phrases, so only 10 new phrases were written to file. -->
-
-<phrase>
-<original>Selection inversion complete.</original>
-<translation>Atlases inversija pabeigta.</translation>
-</phrase>
+<!-- SelectionFiles.bas contains 23 phrases. 15 were duplicates of existing phrases, so only 8 new phrases were written to file. -->
 
 <phrase>
 <original>Feathering selection</original>
 <translation>Spalvu atlase</translation>
-</phrase>
-
-<phrase>
-<original>Feathering complete.</original>
-<translation>Pēršana pabeigta.</translation>
 </phrase>
 
 <phrase>
@@ -3340,11 +3357,6 @@ Pagaidām, lūdzu, mēģiniet saglabāt attēlu citā formātā.  Par to varat a
 </phrase>
 
 <phrase>
-<original>Selection resize complete.</original>
-<translation>Atlases izmēra maiņa pabeigta.</translation>
-</phrase>
-
-<phrase>
 <original>Shrinking selection</original>
 <translation>Atlases samazināšana</translation>
 </phrase>
@@ -3354,14 +3366,19 @@ Pagaidām, lūdzu, mēģiniet saglabāt attēlu citā formātā.  Par to varat a
 <translation>Atlases robežas atrašana</translation>
 </phrase>
 
-<!-- SelectionFilters.bas contains 18 phrases. 10 were duplicates of existing phrases, so only 8 new phrases were written to file. -->
+<phrase>
+<original>Applying changes</original>
+<translation></translation>
+</phrase>
 
-<!-- Selections.bas contains 1 phrase.  One was a duplicate of an existing phrase, so only 0 new phrases were written to file. -->
+<!-- SelectionFilters.bas contains 20 phrases. 14 were duplicates of existing phrases, so only 6 new phrases were written to file. -->
 
 <phrase>
 <original>Create selection</original>
 <translation>Izveidot atlasi</translation>
 </phrase>
+
+<!-- Selections.bas contains 2 phrases.  One was a duplicate of an existing phrase, so only 1 new phrases were written to file. -->
 
 <phrase>
 <original>Release the mouse button to complete the lasso selection</original>
@@ -3383,7 +3400,7 @@ Pagaidām, lūdzu, mēģiniet saglabāt attēlu citā formātā.  Par to varat a
 <translation>Noklikšķiniet uz pirmā punkta, lai pabeigtu poligona atlasi</translation>
 </phrase>
 
-<!-- SelectionUI.bas contains 26 phrases. 21 were duplicates of existing phrases, so only 5 new phrases were written to file. -->
+<!-- SelectionUI.bas contains 26 phrases. 22 were duplicates of existing phrases, so only 4 new phrases were written to file. -->
 
 <!-- Strings.bas contains 2 phrases.  All were duplicates of existing phrases, so no new phrases were written to file. -->
 
@@ -5322,18 +5339,13 @@ Galīgajai vērtībai jābūt starp %3 un %4.</translation>
 </phrase>
 
 <phrase>
-<original>Save current selection</original>
-<translation>Saglabāt pašreizējo atlasi</translation>
+<original>Remove holes</original>
+<translation></translation>
 </phrase>
 
 <phrase>
-<original>Selected area as image</original>
-<translation>Izvēlētais apgabals kā attēls</translation>
-</phrase>
-
-<phrase>
-<original>Selection mask as image</original>
-<translation>Atlases maska kā attēls</translation>
+<original>Selection mask from crop tool</original>
+<translation></translation>
 </phrase>
 
 <phrase>
@@ -5889,7 +5901,7 @@ Atjaunojums tiek automātiski veikts fonā.  Kad tas tiks pabeigts, jūs saņems
 <translation>Valoda veiksmīgi mainīta.</translation>
 </phrase>
 
-<!-- MainWindow.frm contains 417 phrases. 228 were duplicates of existing phrases, so only 189 new phrases were written to file. -->
+<!-- MainWindow.frm contains 422 phrases. 234 were duplicates of existing phrases, so only 188 new phrases were written to file. -->
 
 <phrase>
 <original>Monochrome Conversion</original>
@@ -7953,16 +7965,6 @@ Ja vēlaties to saglabāt ar citu faila nosaukumu, izvēlieties "Atcelt" un pēc
 <!-- Edit_UndoHistory.frm contains 8 phrases. 4 were duplicates of existing phrases, so only 4 new phrases were written to file. -->
 
 <phrase>
-<original>scan for new plugins</original>
-<translation>jaunu spraudņu skenēšana</translation>
-</phrase>
-
-<phrase>
-<original>about this plugin</original>
-<translation>par šo spraudni</translation>
-</phrase>
-
-<phrase>
 <original>add folder</original>
 <translation>pievienot mapi</translation>
 </phrase>
@@ -7980,6 +7982,16 @@ Ja vēlaties to saglabāt ar citu faila nosaukumu, izvēlieties "Atcelt" un pēc
 <phrase>
 <original>remove folder</original>
 <translation>noņemt mapi</translation>
+</phrase>
+
+<phrase>
+<original>scan for new plugins</original>
+<translation>jaunu spraudņu skenēšana</translation>
+</phrase>
+
+<phrase>
+<original>about this plugin</original>
+<translation>par šo spraudni</translation>
 </phrase>
 
 <phrase>
@@ -8634,7 +8646,7 @@ Ja vēlaties to saglabāt ar citu faila nosaukumu, izvēlieties "Atcelt" un pēc
 <translation>Fritēšanas attēls</translation>
 </phrase>
 
-<!-- Effects_Distort_Donut.frm contains 15 phrases. 11 were duplicates of existing phrases, so only 4 new phrases were written to file. -->
+<!-- Effects_Distort_Donut.frm contains 16 phrases. 12 were duplicates of existing phrases, so only 4 new phrases were written to file. -->
 
 <phrase>
 <original>swap order</original>
@@ -9889,6 +9901,71 @@ Labotie faili ir saglabāti mērķa mapē.  Nelabotie faili paliek savās sākot
 </phrase>
 
 <phrase>
+<original>preserve input folder structure</original>
+<translation>saglabāt ievades mapju struktūru</translation>
+</phrase>
+
+<phrase>
+<original>select destination folder</original>
+<translation>Atlasiet galamērķa mapi</translation>
+</phrase>
+
+<phrase>
+<original>lowercase</original>
+<translation>mazie burti</translation>
+</phrase>
+
+<phrase>
+<original>add a prefix to each filename</original>
+<translation>pievienot prefiksu katram faila nosaukumam</translation>
+</phrase>
+
+<phrase>
+<original>add a suffix to each filename</original>
+<translation>katram faila nosaukumam pievienot sufiksu</translation>
+</phrase>
+
+<phrase>
+<original>remove the following text (if found) from each filename</original>
+<translation>no katra faila nosaukuma dzēst šādu tekstu (ja tāds ir atrasts)</translation>
+</phrase>
+
+<phrase>
+<original>force each filename, including extension, to the following case</original>
+<translation>katram faila nosaukumam, ieskaitot paplašinājumu, piespiedu kārtā nosaka šādu gadījumu</translation>
+</phrase>
+
+<phrase>
+<original>UPPERCASE</original>
+<translation>UPPERCASE</translation>
+</phrase>
+
+<phrase>
+<original>replace spaces in filenames with underscores</original>
+<translation>aizstāt atstarpes failu nosaukumos ar pasvītrojumiem</translation>
+</phrase>
+
+<phrase>
+<original>use case-sensitive matching</original>
+<translation>izmantot lielo un mazo burtu un atbilžu saskaņošanu</translation>
+</phrase>
+
+<phrase>
+<original>after images are processed, save them with the following name</original>
+<translation>pēc attēlu apstrādes saglabājiet tos ar šādu nosaukumu</translation>
+</phrase>
+
+<phrase>
+<original>additional rename options</original>
+<translation>papildu pārdēvēšanas izvēles</translation>
+</phrase>
+
+<phrase>
+<original>output images to this folder</original>
+<translation>izejas attēlus uz šo mapi</translation>
+</phrase>
+
+<phrase>
 <original>when importing vector images</original>
 <translation>importējot vektoru attēlus</translation>
 </phrase>
@@ -10019,73 +10096,13 @@ Labotie faili ir saglabāti mērķa mapē.  Nelabotie faili paliek savās sākot
 </phrase>
 
 <phrase>
+<original>sort list</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>(batch conversion process will appear here at run-time)</original>
 <translation>(pakešu konvertēšanas process šeit parādīsies izpildlaikā)</translation>
-</phrase>
-
-<phrase>
-<original>preserve input folder structure</original>
-<translation>saglabāt ievades mapju struktūru</translation>
-</phrase>
-
-<phrase>
-<original>select destination folder</original>
-<translation>Atlasiet galamērķa mapi</translation>
-</phrase>
-
-<phrase>
-<original>lowercase</original>
-<translation>mazie burti</translation>
-</phrase>
-
-<phrase>
-<original>add a prefix to each filename</original>
-<translation>pievienot prefiksu katram faila nosaukumam</translation>
-</phrase>
-
-<phrase>
-<original>add a suffix to each filename</original>
-<translation>katram faila nosaukumam pievienot sufiksu</translation>
-</phrase>
-
-<phrase>
-<original>remove the following text (if found) from each filename</original>
-<translation>no katra faila nosaukuma dzēst šādu tekstu (ja tāds ir atrasts)</translation>
-</phrase>
-
-<phrase>
-<original>force each filename, including extension, to the following case</original>
-<translation>katram faila nosaukumam, ieskaitot paplašinājumu, piespiedu kārtā nosaka šādu gadījumu</translation>
-</phrase>
-
-<phrase>
-<original>UPPERCASE</original>
-<translation>UPPERCASE</translation>
-</phrase>
-
-<phrase>
-<original>replace spaces in filenames with underscores</original>
-<translation>aizstāt atstarpes failu nosaukumos ar pasvītrojumiem</translation>
-</phrase>
-
-<phrase>
-<original>use case-sensitive matching</original>
-<translation>izmantot lielo un mazo burtu un atbilžu saskaņošanu</translation>
-</phrase>
-
-<phrase>
-<original>after images are processed, save them with the following name</original>
-<translation>pēc attēlu apstrādes saglabājiet tos ar šādu nosaukumu</translation>
-</phrase>
-
-<phrase>
-<original>additional rename options</original>
-<translation>papildu pārdēvēšanas izvēles</translation>
-</phrase>
-
-<phrase>
-<original>output images to this folder</original>
-<translation>izejas attēlus uz šo mapi</translation>
 </phrase>
 
 <phrase>
@@ -10427,7 +10444,7 @@ Vai vēlaties saglabāt savu pakešu sarakstu pirms izejas?</translation>
 <translation>Atlikušā laika aplēse</translation>
 </phrase>
 
-<!-- File_BatchWizard.frm contains 185 phrases. 75 were duplicates of existing phrases, so only 110 new phrases were written to file. -->
+<!-- File_BatchWizard.frm contains 186 phrases. 75 were duplicates of existing phrases, so only 111 new phrases were written to file. -->
 
 <phrase>
 <original>alpha cut-off</original>
@@ -13128,7 +13145,7 @@ Vai vēlaties saglabāt savu pakešu sarakstu pirms izejas?</translation>
 <translation>Noklikšķiniet šeit, lai pārvērstu šo slāni pamattekstā.</translation>
 </phrase>
 
-<!-- Toolpanel_TextBasic.frm contains 23 phrases. 13 were duplicates of existing phrases, so only 10 new phrases were written to file. -->
+<!-- Toolpanel_TextBasic.frm contains 25 phrases. 15 were duplicates of existing phrases, so only 10 new phrases were written to file. -->
 
 <phrase>
 <original>remap</original>
@@ -13255,7 +13272,7 @@ Vai vēlaties saglabāt savu pakešu sarakstu pirms izejas?</translation>
 <translation>Noklikšķiniet šeit, lai pārvērstu šo slāni par uzlabotu tekstu.</translation>
 </phrase>
 
-<!-- Toolpanel_Typography.frm contains 65 phrases. 40 were duplicates of existing phrases, so only 25 new phrases were written to file. -->
+<!-- Toolpanel_Typography.frm contains 68 phrases. 43 were duplicates of existing phrases, so only 25 new phrases were written to file. -->
 
 <phrase>
 <original>undo all changes</original>
@@ -13353,6 +13370,26 @@ Vai vēlaties saglabāt savu pakešu sarakstu pirms izejas?</translation>
 </phrase>
 
 <phrase>
+<original>Blend modes</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Recent files</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Recent file %1</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Recent macro %1</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>Toolbox tools</original>
 <translation>Instrumentu kastes rīki</translation>
 </phrase>
@@ -13387,7 +13424,7 @@ Vai vēlaties saglabāt savu pakešu sarakstu pirms izejas?</translation>
 <translation>Tas pārraksta visus ar ātro taustiņu veiktos labojumus.  Vai esat pārliecināts, ka vēlaties turpināt?</translation>
 </phrase>
 
-<!-- Tools_Hotkeys.frm contains 62 phrases. 36 were duplicates of existing phrases, so only 26 new phrases were written to file. -->
+<!-- Tools_Hotkeys.frm contains 72 phrases. 42 were duplicates of existing phrases, so only 30 new phrases were written to file. -->
 
 <phrase>
 <original>click here for detailed instructions (in English)</original>
@@ -14161,6 +14198,16 @@ Vai esat pārliecināts, ka vēlaties turpināt?</translation>
 </phrase>
 
 <phrase>
+<original>display warning when image files aren't loaded successfully</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>broken files</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>load into this instance</original>
 <translation>ielādēt šajā instancē</translation>
 </phrase>
@@ -14180,7 +14227,7 @@ Vai esat pārliecināts, ka vēlaties turpināt?</translation>
 <translation>Ja dators tiek restartēts, kamēr darbojas PhotoDemon, PhotoDemon var automātiski atjaunot iepriekšējo sesiju.</translation>
 </phrase>
 
-<!-- Options_Loading.frm contains 12 phrases.  All 12 were unique, so 12 new phrases were written to file. -->
+<!-- Options_Loading.frm contains 14 phrases.  All 14 were unique, so 14 new phrases were written to file. -->
 
 <phrase>
 <original>when closing images, warn about unsaved changes</original>
@@ -14855,10 +14902,10 @@ Ja tomēr izvēlaties atspējot atjauninājumus, neaizmirstiet laiku pa laikam a
 
 <!-- Automatic text generation complete. -->
 
-<phrasecount>2810</phrasecount>
+<phrasecount>2819</phrasecount>
 
-<!-- As of this build, PhotoDemon contains 6012 phrases. -->
-<!-- 3202 are duplicates, so only 2810 unique phrases have been written to file. -->
-<!-- These 2810 phrases contain approximately 12159 total words. -->
+<!-- As of this build, PhotoDemon contains 6156 phrases. -->
+<!-- 3337 are duplicates, so only 2819 unique phrases have been written to file. -->
+<!-- These 2819 phrases contain approximately 12175 total words. -->
 
 </pdData>

@@ -362,17 +362,24 @@ Public Sub InitializeMenus()
     AddMenuItem "Border...", "select_border", 4, 6
     AddMenuItem "Feather...", "select_feather", 4, 7
     AddMenuItem "Sharpen...", "select_sharpen", 4, 8
-    AddMenuItem "-", "-", 4, 9
-    AddMenuItem "Erase selected area", "select_erasearea", 4, 10, , "paint_erase"
-    AddMenuItem "Fill selected area...", "select_fill", 4, 11, , "paint_fill"
-    AddMenuItem "Heal selected area...", "select_heal", 4, 12, , "edit_contentawarefill"
-    AddMenuItem "Stroke selection outline...", "select_stroke", 4, 13, , "paint_softbrush"
-    AddMenuItem "-", "-", 4, 14
-    AddMenuItem "Load selection...", "select_load", 4, 15, , "file_open"
-    AddMenuItem "Save current selection...", "select_save", 4, 16, , "file_save"
-    AddMenuItem "Export", "select_export", 4, 17
-        AddMenuItem "Selected area as image...", "select_exportarea", 4, 17, 0
-        AddMenuItem "Selection mask as image...", "select_exportmask", 4, 17, 1
+    AddMenuItem "Remove holes", "select_removeholes", 4, 9
+    AddMenuItem "-", "-", 4, 10
+    AddMenuItem "Erase selected area", "select_erasearea", 4, 11, , "paint_erase"
+    AddMenuItem "Fill selected area...", "select_fill", 4, 12, , "paint_fill"
+    AddMenuItem "Heal selected area...", "select_heal", 4, 13, , "edit_contentawarefill"
+    AddMenuItem "Stroke selection outline...", "select_stroke", 4, 14, , "paint_softbrush"
+    AddMenuItem "-", "-", 4, 15
+    AddMenuItem "Load selection...", "select_load", 4, 16, , "file_open"
+    AddMenuItem "Import", "select_import", 4, 17
+        AddMenuItem "Selection mask from crop tool", "select_importfromcrop", 4, 17, 0, "image_crop"
+        AddMenuItem "Selection mask from active layer", "select_importfromlayer", 4, 17, 1
+    AddMenuItem "-", "-", 4, 18
+    AddMenuItem "Save selection...", "select_save", 4, 19, , "file_save"
+    AddMenuItem "Export", "select_export", 4, 20
+        AddMenuItem "Selected pixels to file...", "select_exportpixels", 4, 20, 0
+        AddMenuItem "-", "-", 4, 20, 1
+        AddMenuItem "Selection mask to file...", "select_exportmaskfile", 4, 20, 2
+        AddMenuItem "Selection mask to layer...", "select_exportmasklayer", 4, 20, 3
         
     'Adjustments Menu
     AddMenuItem "Adjustments", "adj_top", 5
@@ -2130,16 +2137,16 @@ Public Sub UpdateSpecialMenu_RecentFiles()
             Else
                 
                 'If actual MRU paths exist, note that we apply them *without* translations, obviously.
-                Dim i As Long, hotkeyNumber As Long
+                Dim i As Long, hkText As String
                 For i = 0 To numOfMRUFiles - 1
                     
                     tmpString = g_RecentFiles.GetMenuCaption(i)
                     
-                    'Entries under "10" get a free accelerator of the form "Ctrl+i"
+                    'Entries 1-10 support hotkeys added via the `Tools > Keyboard shortcuts` menu
                     If (i < 10) Then
-                        hotkeyNumber = i + 1
-                        If (i = 9) Then hotkeyNumber = 0
-                        tmpString = tmpString & vbTab & g_Language.TranslateMessage("Ctrl") & "+" & g_Language.TranslateMessage("Shift") & "+" & hotkeyNumber
+                        If Hotkeys.GetHotkeyText_FromAction(COMMAND_FILE_OPEN_RECENT & CStr(i), hkText) Then
+                            If (LenB(hkText) > 0) Then tmpString = tmpString & vbTab & hkText
+                        End If
                     End If
                     
                     tmpMii.dwTypeData = StrPtr(tmpString)
@@ -2204,11 +2211,21 @@ Public Sub UpdateSpecialMenu_RecentMacros()
             Else
                 
                 'If actual MRU paths exist, note that we apply them *without* translations, obviously.
-                Dim i As Long
+                Dim i As Long, hkText As String
                 For i = 0 To numOfMRUFiles - 1
+                    
                     tmpString = g_RecentMacros.GetSpecificMRUCaption(i)
+                    
+                    'Entries 1-10 support hotkeys added via the `Tools > Keyboard shortcuts` menu
+                    If (i < 10) Then
+                        If Hotkeys.GetHotkeyText_FromAction(COMMAND_TOOLS_MACRO_RECENT & CStr(i), hkText) Then
+                            If (LenB(hkText) > 0) Then tmpString = tmpString & vbTab & hkText
+                        End If
+                    End If
+                    
                     tmpMii.dwTypeData = StrPtr(tmpString)
                     SetMenuItemInfoW hMenu, i, 1&, tmpMii
+                    
                 Next i
                 
             End If

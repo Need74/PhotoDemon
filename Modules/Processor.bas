@@ -647,8 +647,16 @@ Private Sub MiniProcess_NDFXOnly(ByVal processID As String, Optional raiseDialog
     'If the image has been modified and we are not performing a batch conversion (disabled to save speed!),
     ' redraw form and taskbar icons, as well as the image tab-bar.
     If (createUndo <> UNDO_Nothing) And (Macros.GetMacroStatus <> MacroBATCH) And PDImages.IsImageActive() Then
+        
+        'Notify the parent image of the change
+        PDImages.GetActiveImage.NotifyImageChanged UNDO_Layer_VectorSafe, PDImages.GetActiveImage.GetActiveLayerIndex
+        
+        'Notify the interface of the change
         Interface.NotifyImageChanged
+        
+        'Manually update icons to reflect the change
         IconsAndCursors.ChangeAppIcons PDImages.GetActiveImage.GetImageIcon(False), PDImages.GetActiveImage.GetImageIcon(True)
+        
     End If
     
     'Generally, we assume that actions want us to create Undo data for them.  However, there are a few known exceptions:
@@ -668,7 +676,7 @@ Private Sub MiniProcess_NDFXOnly(ByVal processID As String, Optional raiseDialog
     'Synchronize *only* Undo/Redo related elements
     Interface.SyncUndoRedoInterfaceElements
     
-    'Also synchronize the current layer thumbnail
+    'Also synchronize the current image and layer thumbnails
     If (targetLayerID >= 0) Then toolbar_Layers.NotifyLayerChange targetLayerID
     
     'Mark the processor as ready
@@ -948,6 +956,9 @@ Private Function GetNameOfTextAction(ByVal textSettingID As PD_TextProperty) As 
             
         Case ptp_CharScaleY
             GetNameOfTextAction = g_Language.TranslateMessage("vertical scaling")
+        
+        Case ptp_Style
+            GetNameOfTextAction = g_Language.TranslateMessage("text style preset")
             
         Case Else
             GetNameOfTextAction = "WARNING!  Action name not found!"
@@ -1030,7 +1041,7 @@ Private Sub CheckForCanvasModifications(ByVal createUndo As PD_UndoType)
 
     If PDImages.IsImageActive() Then
     
-        If PDImages.GetActiveImage.IsSelectionActive And (createUndo <> UNDO_Selection) And (createUndo <> UNDO_Everything) Then
+        If PDImages.GetActiveImage.IsSelectionActive(False) And (createUndo <> UNDO_Selection) And (createUndo <> UNDO_Everything) Then
         
             'Ask the Undo engine to return the last selection param string it has on file
             Dim lastSelParamString As String
@@ -1082,7 +1093,7 @@ Private Function RemoveSelectionAsNecessary(ByVal processID As String, Optional 
     If (Not raiseDialog) And PDImages.IsImageActive() Then
     
         'Only worry about this step if a selection is currently active
-        If PDImages.GetActiveImage.IsSelectionActive And (createUndo <> UNDO_Selection) Then
+        If PDImages.GetActiveImage.IsSelectionActive(False) And (createUndo <> UNDO_Selection) Then
     
             Dim removeSelectionInAdvance As Boolean
             removeSelectionInAdvance = False
@@ -2688,6 +2699,10 @@ Private Function Process_SelectMenu(ByVal processID As String, Optional raiseDia
     ElseIf Strings.StringsEqual(processID, "Sharpen selection", True) Then
         If raiseDialog Then SelectionFilters.Selection_Sharpen True Else SelectionFilters.Selection_Sharpen False, cParams.GetDouble("filtervalue")
         Process_SelectMenu = True
+    
+    ElseIf Strings.StringsEqual(processID, "Remove holes from selection", True) Then
+        SelectionFilters.Selection_RemoveHoles
+        Process_SelectMenu = True
         
     ElseIf Strings.StringsEqual(processID, "Border selection", True) Then
         If raiseDialog Then SelectionFilters.Selection_ConvertToBorder True Else SelectionFilters.Selection_ConvertToBorder False, cParams.GetDouble("filtervalue")
@@ -2719,16 +2734,25 @@ Private Function Process_SelectMenu(ByVal processID As String, Optional raiseDia
         SelectionFiles.SaveSelectionToFile
         Process_SelectMenu = True
         
+    ElseIf Strings.StringsEqual(processID, "Selection mask from active layer", True) Then
+        SelectionFiles.ImportSelectionMaskFromLayer
+        Process_SelectMenu = True
+        
     'Export selected area as image (defaults to PNG, but user can select the actual format)
-    ElseIf Strings.StringsEqual(processID, "Export selected area as image", True) Then
-        SelectionFiles.ExportSelectedAreaAsImage
+    ElseIf Strings.StringsEqual(processID, "Selected pixels to file", True) Then
+        SelectionFiles.ExportSelectedAreaAsImageFile
         Process_SelectMenu = True
     
     'Export selection mask as image (defaults to PNG, but user can select the actual format)
-    ElseIf Strings.StringsEqual(processID, "Export selection mask as image", True) Then
+    ElseIf Strings.StringsEqual(processID, "Selection mask to file", True) Then
         SelectionFiles.ExportSelectionMaskAsImage
         Process_SelectMenu = True
     
+    'Add the current selection mask to the image as a raster layer
+    ElseIf Strings.StringsEqual(processID, "Selection mask to layer", True) Then
+        SelectionFiles.ExportSelectionMaskAsLayer
+        Process_SelectMenu = True
+        
     ' This is a dummy entry; it only exists so that Undo/Redo data is correctly generated when a selection is moved
     ElseIf Strings.StringsEqual(processID, "Move selection", True) Then
         Selections.CreateNewSelection processParameters

@@ -6,7 +6,7 @@
 
 		<langid>en-US</langid>
 		<langname>English (US) - MASTER COPY</langname>
-		<langversion>2026.1.192</langversion>
+		<langversion>2026.1.244</langversion>
 		<langstatus>Automatically generated from PhotoDemon's source code</langstatus>
 
 		<author>Tanner Helland</author>
@@ -629,6 +629,11 @@
 </phrase>
 
 <phrase>
+<original>Remove holes from selection</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>Erase selected area</original>
 <translation></translation>
 </phrase>
@@ -654,17 +659,27 @@
 </phrase>
 
 <phrase>
+<original>Selection mask from active layer</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>Save selection</original>
 <translation></translation>
 </phrase>
 
 <phrase>
-<original>Export selected area as image</original>
+<original>Selected pixels to file</original>
 <translation></translation>
 </phrase>
 
 <phrase>
-<original>Export selection mask as image</original>
+<original>Selection mask to file</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Selection mask to layer</original>
 <translation></translation>
 </phrase>
 
@@ -1333,7 +1348,7 @@
 <translation></translation>
 </phrase>
 
-		<!-- Actions.bas contains 271 phrases. 7 were duplicates of existing phrases, so only 264 new phrases were written to file. -->
+		<!-- Actions.bas contains 274 phrases. 7 were duplicates of existing phrases, so only 267 new phrases were written to file. -->
 
 <phrase>
 <original>[untitled image]</original>
@@ -1387,6 +1402,168 @@
 </phrase>
 
 		<!-- ColorManagement_ICM.bas contains 7 phrases. 4 were duplicates of existing phrases, so only 3 new phrases were written to file. -->
+
+<phrase>
+<original>Normal</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Darken</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Multiply</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Color burn</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Linear burn</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Lighten</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Screen</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Color dodge</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Linear dodge</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Overlay</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Soft light</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Hard light</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Vivid light</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Linear light</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Pin light</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Hard mix</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Difference</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Exclusion</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Subtract</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Divide</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Hue</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Saturation</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Color</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Luminosity</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Grain extract</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Grain merge</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Erase</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Behind</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Replace</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Next blend mode</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Previous blend mode</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Blend mode: %1</original>
+<translation></translation>
+</phrase>
+
+		<!-- Colors.bas contains 118 phrases. 86 were duplicates of existing phrases, so only 32 new phrases were written to file. -->
 
 <phrase>
 <original>How would you like to load this image?</original>
@@ -1924,151 +2101,6 @@ This image contains %2 unique color + opacity values (RGBA).</original>
 </phrase>
 
 <phrase>
-<original>Normal</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Darken</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Multiply</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Color burn</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Linear burn</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Lighten</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Screen</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Color dodge</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Linear dodge</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Overlay</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Soft light</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Hard light</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Vivid light</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Linear light</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Pin light</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Hard mix</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Difference</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Exclusion</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Subtract</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Divide</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Hue</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Saturation</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Color</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Luminosity</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Grain extract</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Grain merge</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Erase</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Behind</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Replace</original>
-<translation></translation>
-</phrase>
-
-<phrase>
 <original>Inherit</original>
 <translation></translation>
 </phrase>
@@ -2143,7 +2175,7 @@ This image contains %2 unique color + opacity values (RGBA).</original>
 <translation></translation>
 </phrase>
 
-		<!-- Interface.bas contains 101 phrases. 41 were duplicates of existing phrases, so only 60 new phrases were written to file. -->
+		<!-- Interface.bas contains 101 phrases. 70 were duplicates of existing phrases, so only 31 new phrases were written to file. -->
 
 <phrase>
 <original>Blank layer</original>
@@ -2388,7 +2420,7 @@ Please verify that these image(s) exist, and that they use a supported image for
 <translation></translation>
 </phrase>
 
-		<!-- Loading.bas contains 40 phrases. 16 were duplicates of existing phrases, so only 24 new phrases were written to file. -->
+		<!-- Loading.bas contains 38 phrases. 14 were duplicates of existing phrases, so only 24 new phrases were written to file. -->
 
 <phrase>
 <original>This macro does not contain any recordable actions.  Are you sure you want to stop recording?
@@ -2481,7 +2513,7 @@ Please verify that these image(s) exist, and that they use a supported image for
 <translation></translation>
 </phrase>
 
-		<!-- Menus.bas contains 14 phrases. 12 were duplicates of existing phrases, so only 2 new phrases were written to file. -->
+		<!-- Menus.bas contains 12 phrases. 10 were duplicates of existing phrases, so only 2 new phrases were written to file. -->
 
 <phrase>
 <original>All supported palettes</original>
@@ -3097,6 +3129,11 @@ Description: %2
 </phrase>
 
 <phrase>
+<original>text style preset</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>Modify selection</original>
 <translation></translation>
 </phrase>
@@ -3113,7 +3150,7 @@ When finished, click the Submit New Issue button.  Thank you!</original>
 <translation></translation>
 </phrase>
 
-		<!-- Processor.bas contains 133 phrases. 71 were duplicates of existing phrases, so only 62 new phrases were written to file. -->
+		<!-- Processor.bas contains 135 phrases. 72 were duplicates of existing phrases, so only 63 new phrases were written to file. -->
 
 <phrase>
 <original>automatic</original>
@@ -3221,16 +3258,6 @@ In the meantime, please try saving the image to an alternate format.  You can al
 		<!-- ScreenCapture.bas contains 7 phrases. 3 were duplicates of existing phrases, so only 4 new phrases were written to file. -->
 
 <phrase>
-<original>This action requires an active selection.  Please create a selection before continuing.</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Export selection as image</original>
-<translation></translation>
-</phrase>
-
-<phrase>
 <original>PhotoDemon selection</original>
 <translation></translation>
 </phrase>
@@ -3270,20 +3297,10 @@ In the meantime, please try saving the image to an alternate format.  You can al
 <translation></translation>
 </phrase>
 
-		<!-- SelectionFiles.bas contains 25 phrases. 15 were duplicates of existing phrases, so only 10 new phrases were written to file. -->
-
-<phrase>
-<original>Selection inversion complete.</original>
-<translation></translation>
-</phrase>
+		<!-- SelectionFiles.bas contains 23 phrases. 15 were duplicates of existing phrases, so only 8 new phrases were written to file. -->
 
 <phrase>
 <original>Feathering selection</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Feathering complete.</original>
 <translation></translation>
 </phrase>
 
@@ -3298,11 +3315,6 @@ In the meantime, please try saving the image to an alternate format.  You can al
 </phrase>
 
 <phrase>
-<original>Selection resize complete.</original>
-<translation></translation>
-</phrase>
-
-<phrase>
 <original>Shrinking selection</original>
 <translation></translation>
 </phrase>
@@ -3312,14 +3324,19 @@ In the meantime, please try saving the image to an alternate format.  You can al
 <translation></translation>
 </phrase>
 
-		<!-- SelectionFilters.bas contains 18 phrases. 10 were duplicates of existing phrases, so only 8 new phrases were written to file. -->
+<phrase>
+<original>Applying changes</original>
+<translation></translation>
+</phrase>
 
-		<!-- Selections.bas contains 1 phrase.  One was a duplicate of an existing phrase, so only 0 new phrases were written to file. -->
+		<!-- SelectionFilters.bas contains 20 phrases. 14 were duplicates of existing phrases, so only 6 new phrases were written to file. -->
 
 <phrase>
 <original>Create selection</original>
 <translation></translation>
 </phrase>
+
+		<!-- Selections.bas contains 2 phrases.  One was a duplicate of an existing phrase, so only 1 new phrases were written to file. -->
 
 <phrase>
 <original>Release the mouse button to complete the lasso selection</original>
@@ -3341,7 +3358,7 @@ In the meantime, please try saving the image to an alternate format.  You can al
 <translation></translation>
 </phrase>
 
-		<!-- SelectionUI.bas contains 26 phrases. 21 were duplicates of existing phrases, so only 5 new phrases were written to file. -->
+		<!-- SelectionUI.bas contains 26 phrases. 22 were duplicates of existing phrases, so only 4 new phrases were written to file. -->
 
 		<!-- Strings.bas contains 2 phrases.  All were duplicates of existing phrases, so no new phrases were written to file. -->
 
@@ -5275,17 +5292,12 @@ The final value must be between %3 and %4.</original>
 </phrase>
 
 <phrase>
-<original>Save current selection</original>
+<original>Remove holes</original>
 <translation></translation>
 </phrase>
 
 <phrase>
-<original>Selected area as image</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>Selection mask as image</original>
+<original>Selection mask from crop tool</original>
 <translation></translation>
 </phrase>
 
@@ -5838,7 +5850,7 @@ The update is automatically processing in the background.  You will receive a ne
 <translation></translation>
 </phrase>
 
-		<!-- MainWindow.frm contains 417 phrases. 228 were duplicates of existing phrases, so only 189 new phrases were written to file. -->
+		<!-- MainWindow.frm contains 422 phrases. 234 were duplicates of existing phrases, so only 188 new phrases were written to file. -->
 
 <phrase>
 <original>Monochrome Conversion</original>
@@ -7900,16 +7912,6 @@ If you want to save it with a different file name, please select 'Cancel', then 
 		<!-- Edit_UndoHistory.frm contains 8 phrases. 4 were duplicates of existing phrases, so only 4 new phrases were written to file. -->
 
 <phrase>
-<original>scan for new plugins</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>about this plugin</original>
-<translation></translation>
-</phrase>
-
-<phrase>
 <original>add folder</original>
 <translation></translation>
 </phrase>
@@ -7926,6 +7928,16 @@ If you want to save it with a different file name, please select 'Cancel', then 
 
 <phrase>
 <original>remove folder</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>scan for new plugins</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>about this plugin</original>
 <translation></translation>
 </phrase>
 
@@ -8581,7 +8593,7 @@ If you want to save it with a different file name, please select 'Cancel', then 
 <translation></translation>
 </phrase>
 
-		<!-- Effects_Distort_Donut.frm contains 15 phrases. 11 were duplicates of existing phrases, so only 4 new phrases were written to file. -->
+		<!-- Effects_Distort_Donut.frm contains 16 phrases. 12 were duplicates of existing phrases, so only 4 new phrases were written to file. -->
 
 <phrase>
 <original>swap order</original>
@@ -9834,6 +9846,71 @@ Repaired files have been saved to the destination folder.  Unrepaired files rema
 </phrase>
 
 <phrase>
+<original>preserve input folder structure</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>select destination folder</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>lowercase</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>add a prefix to each filename</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>add a suffix to each filename</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>remove the following text (if found) from each filename</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>force each filename, including extension, to the following case</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>UPPERCASE</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>replace spaces in filenames with underscores</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>use case-sensitive matching</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>after images are processed, save them with the following name</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>additional rename options</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>output images to this folder</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>when importing vector images</original>
 <translation></translation>
 </phrase>
@@ -9964,72 +10041,12 @@ Repaired files have been saved to the destination folder.  Unrepaired files rema
 </phrase>
 
 <phrase>
+<original>sort list</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>(batch conversion process will appear here at run-time)</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>preserve input folder structure</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>select destination folder</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>lowercase</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>add a prefix to each filename</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>add a suffix to each filename</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>remove the following text (if found) from each filename</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>force each filename, including extension, to the following case</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>UPPERCASE</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>replace spaces in filenames with underscores</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>use case-sensitive matching</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>after images are processed, save them with the following name</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>additional rename options</original>
-<translation></translation>
-</phrase>
-
-<phrase>
-<original>output images to this folder</original>
 <translation></translation>
 </phrase>
 
@@ -10370,7 +10387,7 @@ Would you like to save your batch list before exiting?</original>
 <translation></translation>
 </phrase>
 
-		<!-- File_BatchWizard.frm contains 185 phrases. 75 were duplicates of existing phrases, so only 110 new phrases were written to file. -->
+		<!-- File_BatchWizard.frm contains 186 phrases. 75 were duplicates of existing phrases, so only 111 new phrases were written to file. -->
 
 <phrase>
 <original>alpha cut-off</original>
@@ -13071,7 +13088,7 @@ Would you like to save your batch list before exiting?</original>
 <translation></translation>
 </phrase>
 
-		<!-- Toolpanel_TextBasic.frm contains 23 phrases. 13 were duplicates of existing phrases, so only 10 new phrases were written to file. -->
+		<!-- Toolpanel_TextBasic.frm contains 25 phrases. 15 were duplicates of existing phrases, so only 10 new phrases were written to file. -->
 
 <phrase>
 <original>remap</original>
@@ -13198,7 +13215,7 @@ Would you like to save your batch list before exiting?</original>
 <translation></translation>
 </phrase>
 
-		<!-- Toolpanel_Typography.frm contains 65 phrases. 40 were duplicates of existing phrases, so only 25 new phrases were written to file. -->
+		<!-- Toolpanel_Typography.frm contains 68 phrases. 43 were duplicates of existing phrases, so only 25 new phrases were written to file. -->
 
 <phrase>
 <original>undo all changes</original>
@@ -13296,6 +13313,26 @@ Would you like to save your batch list before exiting?</original>
 </phrase>
 
 <phrase>
+<original>Blend modes</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Recent files</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Recent file %1</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>Recent macro %1</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>Toolbox tools</original>
 <translation></translation>
 </phrase>
@@ -13330,7 +13367,7 @@ Would you like to save your batch list before exiting?</original>
 <translation></translation>
 </phrase>
 
-		<!-- Tools_Hotkeys.frm contains 62 phrases. 36 were duplicates of existing phrases, so only 26 new phrases were written to file. -->
+		<!-- Tools_Hotkeys.frm contains 72 phrases. 42 were duplicates of existing phrases, so only 30 new phrases were written to file. -->
 
 <phrase>
 <original>click here for detailed instructions (in English)</original>
@@ -14098,6 +14135,16 @@ Are you sure you want to continue?</original>
 </phrase>
 
 <phrase>
+<original>display warning when image files aren't loaded successfully</original>
+<translation></translation>
+</phrase>
+
+<phrase>
+<original>broken files</original>
+<translation></translation>
+</phrase>
+
+<phrase>
 <original>load into this instance</original>
 <translation></translation>
 </phrase>
@@ -14117,7 +14164,7 @@ Are you sure you want to continue?</original>
 <translation></translation>
 </phrase>
 
-		<!-- Options_Loading.frm contains 12 phrases.  All 12 were unique, so 12 new phrases were written to file. -->
+		<!-- Options_Loading.frm contains 14 phrases.  All 14 were unique, so 14 new phrases were written to file. -->
 
 <phrase>
 <original>when closing images, warn about unsaved changes</original>
@@ -14788,10 +14835,10 @@ If you still choose to disable updates, don't forget to visit photodemon.org fro
 
 		<!-- Automatic text generation complete. -->
 
-		<phrasecount>2810</phrasecount>
+		<phrasecount>2819</phrasecount>
 
-	<!-- As of this build, PhotoDemon contains 6012 phrases. -->
-	<!-- 3202 are duplicates, so only 2810 unique phrases have been written to file. -->
-	<!-- These 2810 phrases contain approximately 12159 total words. -->
+	<!-- As of this build, PhotoDemon contains 6156 phrases. -->
+	<!-- 3337 are duplicates, so only 2819 unique phrases have been written to file. -->
+	<!-- These 2819 phrases contain approximately 12175 total words. -->
 
 	</pdData>

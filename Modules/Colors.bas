@@ -1118,3 +1118,117 @@ Public Function GetBlendModeStringFromID(ByVal srcMode As PD_BlendMode) As Strin
     End Select
     
 End Function
+
+'Given a PD blend mode string representation, return a corresponding enum.  PD blend mode
+' strings are ALWAYS 4-chars long.
+Public Function GetBlendModeFriendlyNameFromID(ByVal srcMode As PD_BlendMode) As String
+    
+    Select Case srcMode
+        Case BM_Normal
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Normal")
+        Case BM_Darken
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Darken")
+        Case BM_Multiply
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Multiply")
+        Case BM_ColorBurn
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Color burn")
+        Case BM_LinearBurn
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Linear burn")
+        Case BM_Lighten
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Lighten")
+        Case BM_Screen
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Screen")
+        Case BM_ColorDodge
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Color dodge")
+        Case BM_LinearDodge
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Linear dodge")
+        Case BM_Overlay
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Overlay")
+        Case BM_SoftLight
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Soft light")
+        Case BM_HardLight
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Hard light")
+        Case BM_VividLight
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Vivid light")
+        Case BM_LinearLight
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Linear light")
+        Case BM_PinLight
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Pin light")
+        Case BM_HardMix
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Hard mix")
+        Case BM_Difference
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Difference")
+        Case BM_Exclusion
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Exclusion")
+        Case BM_Subtract
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Subtract")
+        Case BM_Divide
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Divide")
+        Case BM_Hue
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Hue")
+        Case BM_Saturation
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Saturation")
+        Case BM_Color
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Color")
+        Case BM_Luminosity
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Luminosity")
+        Case BM_GrainExtract
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Grain extract")
+        Case BM_GrainMerge
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Grain merge")
+        Case BM_Erase
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Erase")
+        Case BM_Behind
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Behind")
+        Case BM_Overwrite
+            GetBlendModeFriendlyNameFromID = g_Language.TranslateMessage("Replace")
+        Case Else
+            GetBlendModeFriendlyNameFromID = vbNullString
+            PDDebug.LogAction "WARNING! Colors.GetBlendModeFriendlyNameFromID received a bad value: " & srcMode
+    End Select
+    
+End Function
+
+Public Sub GetListOfBlendModeNamesAndActions(ByRef dstNames As pdStringStack, ByRef dstActions As pdStringStack)
+    
+    Set dstNames = New pdStringStack
+    Set dstActions = New pdStringStack
+    
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Next blend mode"), "blend_mode_next"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Previous blend mode"), "blend_mode_previous"
+    
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Normal)), "blend_mode_norm"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Darken)), "blend_mode_dark"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Multiply)), "blend_mode_mult"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_ColorBurn)), "blend_mode_cbrn"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_LinearBurn)), "blend_mode_lbrn"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Lighten)), "blend_mode_lght"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Screen)), "blend_mode_scrn"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_ColorDodge)), "blend_mode_cddg"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_LinearDodge)), "blend_mode_lddg"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Overlay)), "blend_mode_ovrl"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_SoftLight)), "blend_mode_sftl"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_HardLight)), "blend_mode_hrdl"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_VividLight)), "blend_mode_vvdl"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_LinearLight)), "blend_mode_lnrl"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_PinLight)), "blend_mode_pinl"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_HardMix)), "blend_mode_hrdm"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Difference)), "blend_mode_diff"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Exclusion)), "blend_mode_excl"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Subtract)), "blend_mode_subt"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Divide)), "blend_mode_divd"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Hue)), "blend_mode_hue"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Saturation)), "blend_mode_satr"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Color)), "blend_mode_clr"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Luminosity)), "blend_mode_lumn"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_GrainExtract)), "blend_mode_gext"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_GrainMerge)), "blend_mode_gmrg"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Erase)), "blend_mode_eras"
+    AddActionToStringList dstNames, dstActions, g_Language.TranslateMessage("Blend mode: %1", Colors.GetBlendModeFriendlyNameFromID(BM_Behind)), "blend_mode_bhnd"
+    
+End Sub
+
+Private Sub AddActionToStringList(ByRef dstNames As pdStringStack, ByRef dstActions As pdStringStack, ByRef translatedName As String, ByRef actionID As String)
+    dstNames.AddString translatedName
+    dstActions.AddString actionID
+End Sub

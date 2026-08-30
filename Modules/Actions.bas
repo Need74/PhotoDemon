@@ -3,8 +3,8 @@ Attribute VB_Name = "Actions"
 'Action Handler
 'Copyright 2001-2026 by Tanner Helland
 'Created: 07/October/21
-'Last updated: 09/April/26
-'Last update: new functions to enable Repeat [last] and Re-show [last] submenus for Adjustments and Effects
+'Last updated: 30/May/26
+'Last update: new actions for converting between raster layers and selection masks (Select > Import/Export)
 '
 'Want to execute a program operation?  Call this module.
 '
@@ -40,7 +40,6 @@ Option Explicit
 ' tag some unique command IDs so that they can be reused elsewhere.
 Public Const COMMAND_FILE_OPEN_RECENT As String = "file_open_recent_"
 Public Const COMMAND_TOOLS_MACRO_RECENT As String = "tools_macro_recent_"
-Public Const COMMAND_ADJUSTMENT_RECENT As String = "adjustment_recent"
 
 'PhotoDemon actions can be triggered by different places: menu clicks, hotkeys, or searches.  Some actions
 ' behave slightly differently depending on source.  (For example, "Paste to cursor" only works if the
@@ -128,8 +127,6 @@ Public Function LaunchAction_ByName(ByRef srcMenuName As String, Optional ByVal 
     
     'Cache various attributes related to this action.
     ' (This enables UI features like the Adjustment > Repeat, Re-show, and Recently used menus.)
-    Dim idxAction As Long
-    
     m_LastActionCategory = GetRepeatReshowCategory(srcMenuName)
     If (m_LastActionCategory <> rr_None) Then
         
@@ -380,7 +377,7 @@ Private Function Launch_ByName_MenuEdit(ByRef srcMenuName As String, Optional By
         ' If, however, no selection is active, we will delete the entire layer.  That requires a backup
         ' of the full layer stack.
         Case "edit_cutlayer"
-            If PDImages.GetActiveImage.IsSelectionActive Then
+            If PDImages.GetActiveImage.IsSelectionActive() Then
                 Process "Cut", False, , UNDO_Layer
             Else
                 Process "Cut", False, , UNDO_Image
@@ -769,6 +766,9 @@ Private Function Launch_ByName_MenuSelect(ByRef srcMenuName As String, Optional 
         Case "select_sharpen"
             Process "Sharpen selection", True
             
+        Case "select_removeholes"
+            Process "Remove holes from selection", createUndo:=UNDO_Selection
+        
         Case "select_erasearea"
             Process "Erase selected area", False, BuildParamList("targetlayer", PDImages.GetActiveImage.GetActiveLayerIndex), UNDO_Layer
             
@@ -783,16 +783,29 @@ Private Function Launch_ByName_MenuSelect(ByRef srcMenuName As String, Optional 
         
         Case "select_load"
             Process "Load selection", True
+        
+        Case "select_import"
             
+            'Instead of directly launching a process call, use the specialized function that also validates
+            ' the crop rectangle *before* converting.  (The function does nothing if a valid crop does not already exist.)
+            Case "select_importfromcrop"
+                Selections.CreateSelectionFromCrop
+                
+            Case "select_importfromlayer"
+                Process "Selection mask from active layer", False, vbNullString, UNDO_Selection
+                
         Case "select_save"
             Process "Save selection", True
             
         Case "select_export"
-            Case "select_exportarea"
-                Process "Export selected area as image", True
+            Case "select_exportpixels"
+                Process "Selected pixels to file", True
                 
-            Case "select_exportmask"
-                Process "Export selection mask as image", True
+            Case "select_exportmaskfile"
+                Process "Selection mask to file", True
+                
+            Case "select_exportmasklayer"
+                Process "Selection mask to layer", False, vbNullString, UNDO_Everything
                 
         Case Else
             cmdFound = False
@@ -1613,6 +1626,10 @@ Private Function Launch_ByName_NonMenu(ByRef srcMenuName As String, Optional ByV
         Case "tool_crop"
             toolbar_Toolbox.SelectNewTool ND_CROP, (actionSource = pdas_Search), True
         
+        'Used only by the crop tool, to commit the active crop.  (We don't actually *do* anything here; this is just
+        ' to flag the action as a non-adjustment, non-effect operation.)
+        Case "tool_crop_apply"
+            
         Case "tool_select_rect"
             If (actionSource = pdas_Hotkey) Then
                 If (g_CurrentTool = SELECT_RECT) Then toolbar_Toolbox.SelectNewTool SELECT_CIRC Else toolbar_Toolbox.SelectNewTool SELECT_RECT
@@ -1667,6 +1684,97 @@ Private Function Launch_ByName_NonMenu(ByRef srcMenuName As String, Optional ByV
         'Open the search panel and set focus to the search box
         Case "tool_search"
             toolbar_Layers.SetFocusToSearchBox
+            
+        'Change blend modes
+        Case "blend_mode_next"
+            toolbar_Layers.LayerUI_SwitchBlendMode_Next False
+        
+        Case "blend_mode_previous"
+            toolbar_Layers.LayerUI_SwitchBlendMode_Next True
+            
+        Case "blend_mode_norm"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Normal
+            
+        Case "blend_mode_dark"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Darken
+            
+        Case "blend_mode_mult"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Multiply
+            
+        Case "blend_mode_cbrn"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_ColorBurn
+            
+        Case "blend_mode_lbrn"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_LinearBurn
+            
+        Case "blend_mode_lght"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Lighten
+            
+        Case "blend_mode_scrn"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Screen
+            
+        Case "blend_mode_cddg"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_ColorDodge
+            
+        Case "blend_mode_lddg"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_LinearDodge
+            
+        Case "blend_mode_ovrl"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Overlay
+            
+        Case "blend_mode_sftl"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_SoftLight
+            
+        Case "blend_mode_hrdl"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_HardLight
+            
+        Case "blend_mode_vvdl"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_VividLight
+            
+        Case "blend_mode_lnrl"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_LinearLight
+            
+        Case "blend_mode_pinl"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_PinLight
+            
+        Case "blend_mode_hrdm"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_HardMix
+            
+        Case "blend_mode_diff"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Difference
+            
+        Case "blend_mode_excl"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Exclusion
+            
+        Case "blend_mode_subt"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Subtract
+            
+        Case "blend_mode_divd"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Divide
+            
+        Case "blend_mode_hue"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Hue
+            
+        Case "blend_mode_satr"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Saturation
+            
+        Case "blend_mode_clr"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Color
+            
+        Case "blend_mode_lumn"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Luminosity
+            
+        Case "blend_mode_gext"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_GrainExtract
+            
+        Case "blend_mode_gmrg"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_GrainMerge
+            
+        Case "blend_mode_eras"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Erase
+            
+        Case "blend_mode_bhnd"
+            toolbar_Layers.LayerUI_SwitchBlendMode BM_Behind
             
         Case Else
             cmdFound = False
@@ -1899,15 +2007,20 @@ Public Sub BuildActionDatabase()
     AddAction "select_border", "Border selection", True, False, True
     AddAction "select_feather", "Feather selection", True, False, True
     AddAction "select_sharpen", "Sharpen selection", True, False, True
+    AddAction "select_removeholes", "Remove holes from selection", True, False, False
     AddAction "select_erasearea", "Erase selected area", True, False, True
     AddAction "select_fill", "Fill selected area", True, True, True
     AddAction "select_heal", "Heal selected area", True, True, True
     AddAction "select_stroke", "Stroke selection outline", True, True, True
     AddAction "select_load", "Load selection"
+    'AddAction "select_import"
+    AddAction "select_importfromcrop", "Selection mask from crop tool", False, False, False
+    AddAction "select_importfromlayer", "Selection mask from active layer", False, False, False
     AddAction "select_save", "Save selection"
     'AddAction "select_export"
-    AddAction "select_exportarea", "Export selected area as image", False, False, True
-    AddAction "select_exportmask", "Export selection mask as image", False, False, True
+    AddAction "select_exportpixels", "Export selected area as image", False, False, True
+    AddAction "select_exportmaskfile", "Export selection mask as image", False, False, True
+    AddAction "select_exportmasklayer", "Selection mask to layer", False, False, False
     
     AddAction "adj_repeat", "Repeat", False, True, False
     AddAction "adj_reshow", "Re-show", False, False, True
@@ -2147,6 +2260,9 @@ Public Sub BuildActionDatabase()
     AddAction "tool_active_sizedown"
     AddAction "tool_active_sizeup"
     
+    AddAction "blend_mode_next"
+    AddAction "blend_mode_previous"
+    
     PDDebug.LogAction CStr(m_numActions) & " actions registered this session."
     
     'Also prep the arrays that track "repeat [action]" and "re-show [dialog]" in individual menus
@@ -2165,6 +2281,9 @@ Public Sub BuildActionDatabase()
     Next i
     
     NotifyMaxNumActionsToRemember
+    
+    'Reset the "last action category" to ensure it is not mistakenly added to the Adjustments > Repeat last menu
+    m_LastActionCategory = rr_None
     
 End Sub
 
